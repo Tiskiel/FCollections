@@ -18,7 +18,7 @@ return new class extends Migration
                         ->references('id')
                         ->on('items')
                         ->onUpdate('cascade');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('slug');
             $table->string('origin');
             $table->string('state');
