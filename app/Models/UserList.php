@@ -10,16 +10,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * Summary of UserList
  */
+//For next step of refacto => rename UserList to UserCollections
 class UserList extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
+    protected $with = ['item', 'user'];
+
     
     public function getKeyName() : string
     {
-        return 'id'; 
+        return 'username'; 
     }
 
     public function user() : BelongsTo
