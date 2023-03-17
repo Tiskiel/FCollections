@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Item extends Model
@@ -12,11 +13,11 @@ class Item extends Model
 
     protected $guarded = [];
 
-    public function wishlist() : HasMany {
-        return $this->hasMany(WishList::class);
+    public function wishlist() : BelongsToMany {
+        return $this->belongsToMany(WishList::class);
     }
 
-    public function userlist() : HasMany {
-        return $this->hasMany(UserList::class);
+    public function userlist() : BelongsToMany {
+        return $this->belongsToMany(UserList::class);
     }
 }
