@@ -17,7 +17,7 @@ class Item extends Model
     protected $with = ['category'];
 
     public function wishlist() : BelongsToMany {
-        return $this->belongsToMany(WishList::class, 'wishlist_item','item_id', 'wishlist_id');
+        return $this->belongsToMany(WishList::class, 'item_wishlist','item_id', 'wishlist_id');
     }
 
     public function userlist() : BelongsToMany {

@@ -25,7 +25,7 @@ class WishList extends Model
     }
 
     public function item() : BelongsToMany {
-        return $this->belongsToMany(Item::class, 'wishlist_item', 'wishlist_id', 'item_id');
+        return $this->belongsToMany(Item::class, 'item_wishlist', 'wishlist_id', 'item_id');
     }
     
 }
