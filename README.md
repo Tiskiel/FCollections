@@ -1,4 +1,4 @@
-<h1>Creation de FCollection un site web de partage de collections en Fullstack Laravel Eloquent Blade</h1>
+<h1>Creation de FCollection un site web de partage de collections</h1>
 
 <label>Framework</label>
 <ul>
