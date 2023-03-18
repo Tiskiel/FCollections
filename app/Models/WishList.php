@@ -20,7 +20,7 @@ class WishList extends Model
     protected $with = ['item', 'user'];
 
     public function user() : BelongsTo {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function item() : HasMany {

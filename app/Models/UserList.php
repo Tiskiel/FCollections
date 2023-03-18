@@ -19,15 +19,9 @@ class UserList extends Model
 
     protected $with = ['item', 'user'];
 
-    
-    public function getKeyName() : string
-    {
-        return 'username'; 
-    }
-
     public function user() : BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function item() : HasMany {
