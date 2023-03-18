@@ -6,6 +6,9 @@
     @vite('resources/css/app.css')
 </head>
 <body>
+    <head>
+        @include('header')
+    </head>
     <h1 class="text-3xl font-bold underline">
         {{ $slot }}
     </h1>
