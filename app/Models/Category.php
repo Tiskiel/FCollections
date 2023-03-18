@@ -12,7 +12,7 @@ class Category extends Model
 
     protected $guarded = [];
 
-    protected $with = ['item'];
+    // protected $with = [];
 
     public function item() : HasMany {
         return $this->hasMany(Item::class);

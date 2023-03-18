@@ -18,7 +18,7 @@ class UserList extends Model
 
     protected $guarded = [];
 
-    protected $with = ['item', 'user'];
+    // protected $with = ['item', 'user'];
 
     public function user() : BelongsTo
     {

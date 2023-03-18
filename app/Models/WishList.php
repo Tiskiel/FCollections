@@ -18,7 +18,7 @@ class WishList extends Model
         return 'slug';
     }
 
-    protected $with = ['item', 'user'];
+    // protected $with = ['item', 'user'];
 
     public function user() : BelongsTo {
         return $this->belongsTo(User::class, 'user_id');

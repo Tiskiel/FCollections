@@ -44,7 +44,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $with = ['wishlist', 'userlist'];
+    // protected $with = ['wishlist', 'userlist'];
 
     public function wishlist() : HasOne {
         return $this->hasOne(WishList::class, 'user_id');
