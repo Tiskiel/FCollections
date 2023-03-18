@@ -19,7 +19,6 @@ class UserListFactory extends Factory
     public function definition(): array
     {
         return [
-            'item_id' => Item::factory(),
             'user_id' => User::factory()
         ];
     }
