@@ -23,9 +23,6 @@ return new class extends Migration
                     ->references('id')
                     ->on('users')
                     ->onUpdate('cascade');
-            $table->string('title');
-            $table->string('body');
-            $table->string('slug');
             $table->timestamps();
         });
     }
