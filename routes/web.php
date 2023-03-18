@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//test
 Route::get('/', function () {
-    return view('welcome', ['categories', Category::all()]);
+    return view('welcome', ['categories' => Category::all()]);
 });
 
 
