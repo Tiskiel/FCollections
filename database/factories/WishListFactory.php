@@ -25,10 +25,11 @@ class WishListFactory extends Factory
     }
 
     public function configure()
-    {
-        return $this->afterCreating(function (WishList $wishlist) {
-            $items = Item::inRandomOrder()->take(3)->get();
-            $wishlist->items()->attach($items);
-        });
-    }
+{
+    return $this->afterCreating(function (WishList $wishlist) {
+        $items = Item::inRandomOrder()->take(3)->get();
+        $wishlist->item()->sync($items);
+    });
+}
+
 }

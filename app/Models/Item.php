@@ -17,12 +17,13 @@ class Item extends Model
     protected $with = ['category'];
 
     public function wishlist() : BelongsToMany {
-        return $this->belongsToMany(WishList::class, 'wishlist_id');
+        return $this->belongsToMany(WishList::class, 'wishlist_item','item_id', 'wishlist_id');
     }
 
     public function userlist() : BelongsToMany {
-        return $this->belongsToMany(UserList::class,'user_list_id');
+        return $this->belongsToMany(UserList::class, 'item_user_list', 'item_id', 'user_list_id');
     }
+    
 
     public function category() : BelongsTo {
         return $this->belongsTo(Category::class);

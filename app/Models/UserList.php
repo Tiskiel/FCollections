@@ -26,6 +26,7 @@ class UserList extends Model
     }
 
     public function item() : BelongsToMany {
-        return $this->belongsToMany(Item::class, 'item_id');
+        return $this->belongsToMany(Item::class, 'item_user_list', 'user_list_id', 'item_id');
     }
+    
 }

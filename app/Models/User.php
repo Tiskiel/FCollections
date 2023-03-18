@@ -47,10 +47,10 @@ class User extends Authenticatable
     protected $with = ['wishlist', 'userlist'];
 
     public function wishlist() : HasOne {
-        return $this->hasOne(WishList::class);
+        return $this->hasOne(WishList::class, 'user_id');
     }
 
     public function userlist() : hasOne {
-        return $this->hasOne(UserList::class);
+        return $this->hasOne(UserList::class, 'user_id');
     }
 }
