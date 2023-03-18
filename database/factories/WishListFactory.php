@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Item;
 use App\Models\User;
+use App\Models\WishList;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,5 +22,13 @@ class WishListFactory extends Factory
         return [
             'user_id' => User::factory()
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (WishList $wishlist) {
+            $items = Item::inRandomOrder()->take(3)->get();
+            $wishlist->items()->attach($items);
+        });
     }
 }
