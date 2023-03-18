@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')
                         ->references('id')
-                        ->on('items')
+                        ->on('categories')
                         ->onUpdate('cascade');
             $table->string('name')->unique();
             $table->string('slug');
